@@ -122,6 +122,11 @@
   margin: 0 2px;
 }
 
+/* Esconder hambúrguer em telas grandes */
+.menu-toggle {
+  display: none;
+}
+
 /* ------------------------------ */
 /*   🔽 RESPONSIVIDADE AQUI 🔽    */
 /* ------------------------------ */
@@ -175,6 +180,9 @@
     justify-content: space-between;
     cursor: pointer;
     margin-right: auto;
+    background: none;
+    border: none;
+    padding: 0;
   }
 
   .menu-toggle span {
