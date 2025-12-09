@@ -122,11 +122,6 @@
   margin: 0 2px;
 }
 
-/* Esconder hambúrguer em telas grandes */
-.menu-toggle {
-  display: none;
-}
-
 /* ------------------------------ */
 /*   🔽 RESPONSIVIDADE AQUI 🔽    */
 /* ------------------------------ */
@@ -149,6 +144,11 @@
   .lang-btn-side {
     padding: 10px 15px;
     font-size: 0.8rem;
+  }
+
+  /* Esconder hambúrguer em telas maiores que 600px */
+  .menu-toggle {
+    display: none;
   }
 }
 
