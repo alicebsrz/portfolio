@@ -156,61 +156,76 @@
 @media (max-width: 600px) {
   .header-wrapper {
     top: 15px;
-    width: calc(100% - 30px);
+    width: 90%; /* Ajuste para não colar na borda */
+    left: 50%;
+    transform: translateX(-50%);
     justify-content: space-between;
   }
 
   .navbar-container {
-    padding: 12px 20px;
+    padding: 10px 15px; /* Pílula um pouco menor no mobile */
     border-radius: 40px;
-    flex: 1;
-    justify-content: flex-start;
+    /* Removemos flex:1 para a pílula não empurrar o hambúrguer para fora */
+    width: auto; 
+    justify-content: flex-end;
   }
 
+  /* O MENU (Lista de links) */
   .nav-menu {
-    display: none; /* some o menu */
+    display: none; /* Escondido por padrão */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #EEDAC5;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border: 2px solid #fff;
+    z-index: 999; /* Garante que fique em cima */
   }
 
-  /* Botão de menu hamburguer */
+  /* QUANDO ATIVADO (Classe adicionada pelo React) */
+  .nav-menu.active {
+    display: flex; /* Aparece */
+    animation: slideDown 0.3s ease;
+  }
+
+  /* Animação suave */
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* BOTÃO HAMBURGUER (Agora visível) */
   .menu-toggle {
-    width: 28px;
-    height: 22px;
-    display: flex;
+    display: flex; /* Força aparecer */
     flex-direction: column;
     justify-content: space-between;
-    cursor: pointer;
-    margin-right: auto;
-    background: none;
+    width: 30px;
+    height: 22px;
+    background: transparent;
     border: none;
+    cursor: pointer;
+    z-index: 1001; /* Fica acima de tudo */
     padding: 0;
+    margin-right: 15px; /* Espaço entre ele e a pílula */
   }
 
   .menu-toggle span {
     display: block;
-    height: 4px;
-    background: #FF4081;
-    border-radius: 10px;
-    transition: 0.3s ease;
-  }
-
-  /* Quando ativar o menu */
-  .nav-menu.active {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    position: absolute;
-    top: 65px;
-    left: 15px;
-    background: #EEDAC5;
-    padding: 20px 30px;
-    border-radius: 30px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    width: 100%;
+    height: 3px; /* Um pouco mais fino para ficar elegante */
+    background-color: #FF4081; /* Rosa choque */
+    border-radius: 3px;
+    transition: all 0.3s ease;
   }
 
   /* Botão de idioma no mobile */
   .lang-btn-side {
-    padding: 10px 14px;
+    padding: 8px 12px;
     font-size: 0.75rem;
-    gap: 6px;
+    gap: 4px;
   }
 }
