@@ -94,15 +94,33 @@ const Projects = () => {
 
   if (!texts) return null;
 
+  // Lógica de Loop Infinito
   const scrollLeft = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -350, behavior: 'smooth' });
+      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+      
+      // Se estiver no começo (0), vai para o fim
+      if (scrollLeft === 0) {
+        carouselRef.current.scrollTo({ left: scrollWidth, behavior: 'smooth' });
+      } else {
+        // Senão, rola para a esquerda normal
+        carouselRef.current.scrollBy({ left: -350, behavior: 'smooth' });
+      }
     }
   };
 
   const scrollRight = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 350, behavior: 'smooth' });
+      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+      
+      // Verifica se chegou no fim (com uma margem de erro de 10px)
+      if (scrollLeft + clientWidth >= scrollWidth - 10) {
+        // Volta para o início (Loop)
+        carouselRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        // Senão, rola para a direita normal
+        carouselRef.current.scrollBy({ left: 350, behavior: 'smooth' });
+      }
     }
   };
 
