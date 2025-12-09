@@ -3,12 +3,6 @@ import { Paperclip, Recycle, Cpu, FileText, Globe, Video, Camera } from 'lucide-
 import { useLanguage } from '../hooks/useLanguage';
 import './College.css';
 
-import foto1 from '../assets/ecoarduino/foto-1.jpg';
-import foto2 from '../assets/ecoarduino/foto-2.jpg';
-import foto3 from '../assets/ecoarduino/foto-3.jpg';
-import foto4 from '../assets/ecoarduino/foto-4.jpg';
-import video1 from '../assets/ecoarduino/video-1.mp4';
-
 const College = () => {
   const { texts, lang } = useLanguage();
 
@@ -70,7 +64,7 @@ const College = () => {
               <Video size={16} /> {texts.college.videoTitle}
             </div>
             <video controls>
-              <source src={video1} type="video/mp4" />
+              <source src="/img/ecoarduino/video-1.mp4" type="video/mp4" />
               Seu navegador não suporta vídeos.
             </video>
           </div>
@@ -92,19 +86,19 @@ const College = () => {
 
             <div className="polaroid-gallery">
               <div className="polaroid">
-                <img src={foto1} alt="Protótipo 1" />
+                <img src="/img/ecoarduino/foto-1.jpg" alt="Protótipo 1" />
                 <span>{texts.college.label1}</span>
               </div>
               <div className="polaroid">
-                <img src={foto2} alt="Protótipo 2" />
+                <img src="/img/ecoarduino/foto-2.jpg" alt="Protótipo 2" />
                 <span>{texts.college.label2}</span>
               </div>
               <div className="polaroid">
-                <img src={foto3} alt="Protótipo 3" />
+                <img src="/img/ecoarduino/foto-3.jpg" alt="Protótipo 3" />
                 <span>{texts.college.label3}</span>
               </div>
               <div className="polaroid">
-                <img src={foto4} alt="Protótipo 4" />
+                <img src="/img/ecoarduino/foto-4.jpg" alt="Protótipo 4" />
                 <span>{texts.college.label4}</span>
               </div>
             </div>

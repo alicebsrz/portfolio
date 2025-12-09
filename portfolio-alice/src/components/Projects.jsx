@@ -9,11 +9,11 @@ const projectsData = [
     id: 1,
     title: "Athenia",
     category: "Hub Literário Full Stack",
-    mainImage: "/src/assets/athenia/main.png",
+    mainImage: "/img/athenia/main.png",
     galleryImages: [
-      "/src/assets/athenia/galeria1.png",
-      "/src/assets/athenia/galeria2.png",
-      "/src/assets/athenia/galeria3.png"
+      "/img/athenia/galeria1.png",
+      "/img/athenia/galeria2.png",
+      "/img/athenia/galeria3.png"
     ],
     videoUrl: null,
     tags: ["Full Stack", "Google Books API", "Site de Livros", "Dashboard"],
@@ -28,11 +28,11 @@ const projectsData = [
     id: 2,
     title: "EducaKids",
     category: "Plataforma Educacional Interativa",
-    mainImage: "/src/assets/educakids/main.png",
+    mainImage: "/img/educakids/main.png",
     galleryImages: [
-      "/src/assets/educakids/galeria1.png",
-      "/src/assets/educakids/galeria2.png",
-      "/src/assets/educakids/galeria3.png"
+      "/img/educakids/galeria1.png",
+      "/img/educakids/galeria2.png",
+      "/img/educakids/galeria3.png"
     ],
     videoUrl: null,
     tags: ["React", "JavaScript", "Design Lúdico", "Gamificação", "Site Infantil", "UI/UX"],
@@ -47,12 +47,12 @@ const projectsData = [
     id: 3,
     title: "Aderia Cosméticos",
     category: "E-commerce Full Stack",
-    mainImage: "/src/assets/aderia/main.png",
+    mainImage: "/img/aderia/main.png",
     galleryImages: [
-      "/src/assets/aderia/galeria1.png",
-      "/src/assets/aderia/galeria2.png",
-      "/src/assets/aderia/galeria3.png",
-      "/src/assets/aderia/galeria4.png"
+      "/img/aderia/galeria1.png",
+      "/img/aderia/galeria2.png",
+      "/img/aderia/galeria3.png",
+      "/img/aderia/galeria4.png"
     ],
     videoUrl: null,
     tags: ["MongoDB", "JWT Auth", "UI/UX", "Site Comercial", "E-commerce"],
@@ -67,14 +67,14 @@ const projectsData = [
     id: 4,
     title: "FinWise Lite",
     category: "Dashboard Financeiro & Estoque (Full Stack)",
-    mainImage: "/src/assets/finwise/main.png",
+    mainImage: "/img/finwise/main.png",
     galleryImages: [
-      "/src/assets/finwise/galeria1.png",
-      "/src/assets/finwise/galeria2.png",
-      "/src/assets/finwise/galeria3.png",
-      "/src/assets/finwise/galeria4.png",
-      "/src/assets/finwise/galeria5.png",
-      "/src/assets/finwise/galeria6.png"
+      "/img/finwise/galeria1.png",
+      "/img/finwise/galeria2.png",
+      "/img/finwise/galeria3.png",
+      "/img/finwise/galeria4.png",
+      "/img/finwise/galeria5.png",
+      "/img/finwise/galeria6.png"
     ],
     videoUrl: null,
     tags: ["TypeScript", "Prisma", "Dashboards", "Estoque", "Site Financeiro"],
