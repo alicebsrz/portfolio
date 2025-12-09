@@ -1,0 +1,231 @@
+:root {
+  --about-pink-card: #E6C0C0;
+  --about-lines: rgba(211, 138, 163, 0.15);
+  --about-text: #6B4F4F;
+  --about-accent: #D38AA3;
+}
+
+/* 1. FUNDO CADERNO */
+.about-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #FDFBF7;
+  background-image: repeating-linear-gradient(transparent, transparent 29px, var(--about-lines) 30px);
+  border-left: 2px solid rgba(211, 138, 163, 0.3);
+  overflow: hidden;
+}
+
+.about-title {
+  font-family: 'Jersey 10', sans-serif;
+  font-size: 4.5rem;
+  color: #000;
+  margin-bottom: 60px;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: var(--about-accent);
+  text-decoration-thickness: 4px;
+  text-underline-offset: 8px;
+}
+
+/* 2. CARD ROSA */
+.about-card {
+  position: relative;
+  background-color: var(--about-pink-card);
+  width: 100%;
+  max-width: 850px;
+  min-height: 500px;
+  border-radius: 30px;
+  padding: 80px 50px 50px 50px;
+  margin-top: 40px;
+  box-shadow: 0 20px 40px rgba(211, 138, 163, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: height 0.3s ease;
+}
+
+/* 3. FOTO */
+.about-photo-container {
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #fff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.about-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 4. CONTEÚDO (Slides) */
+.slide-content {
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slide-title {
+  font-family: 'Jersey 10', sans-serif;
+  font-size: 2.8rem;
+  color: #000;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.slide-text {
+  font-family: 'Cabin', sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--about-text);
+  max-width: 700px;
+}
+
+.skill-category {
+  margin-bottom: 20px;
+  width: 100%;
+}
+.skill-category h4 {
+  font-family: 'Jersey 10', sans-serif;
+  font-size: 1.5rem;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.skill-badge {
+  background: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-family: 'Cabin', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--about-text);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 2px 2px 0px rgba(107, 79, 79, 0.1);
+}
+
+.list-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  width: 100%;
+  max-width: 700px;
+  text-align: left;
+}
+
+.list-item {
+  background: rgba(255,255,255,0.5);
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-family: 'Cabin', sans-serif;
+  color: var(--about-text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(255,255,255,0.8);
+}
+
+/* 5. SETAS DE NAVEGAÇÃO (Novidade!) */
+.about-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 20;
+  box-shadow: 4px 4px 0px #000;
+  transition: all 0.2s ease;
+}
+
+.about-arrow:hover {
+  background: var(--about-accent);
+  color: #fff;
+  transform: translateY(-55%) scale(1.1);
+  box-shadow: 6px 6px 0px #000;
+}
+
+.about-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+  box-shadow: 2px 2px 0px #000;
+}
+
+.about-arrow.left { left: -25px; }
+.about-arrow.right { right: -25px; }
+
+.dots-container {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+}
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(107, 79, 79, 0.2);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.dot.active {
+  background-color: #000;
+  transform: scale(1.3);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- RESPONSIVIDADE (Mobile) --- */
+@media (max-width: 768px) {
+  .about-card {
+    padding: 70px 20px 80px 20px;
+    margin-top: 50px;
+  }
+  
+  .slide-text { font-size: 1rem; }
+  
+  .list-grid { grid-template-columns: 1fr; }
+  
+  .about-arrow {
+    top: auto;
+    bottom: 20px;
+    transform: none;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .about-arrow.left { left: 20px; }
+  .about-arrow.right { right: 20px; }
+  
+  .about-title { font-size: 3.5rem; }
+}

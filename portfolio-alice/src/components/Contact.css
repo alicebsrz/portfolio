@@ -1,0 +1,231 @@
+/* src/components/Contact.css */
+
+:root {
+  --contact-bg: #FDFBF7;
+  --contact-card: #FFFFFF;
+  --contact-pink: #FFE4E1;
+  --contact-accent: #D38AA3;
+  --contact-text: #6B4F4F;
+  --input-border: #E4E4E4;
+  --input-focus: #F3B8C9;
+}
+
+.contact-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 80px 20px;
+  color: var(--contact-text);
+  background-color: var(--contact-bg);
+  background-image:
+    linear-gradient(#E8E8E8 1px, transparent 1px),
+    linear-gradient(90deg, #E8E8E8 1px, transparent 1px);
+  background-size: 30px 30px;
+  border-left: 4px solid rgba(211, 138, 163, 0.3);
+}
+
+.contact-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.top-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.message-box {
+  position: relative;
+}
+
+.message-title {
+  font-family: 'Caveat', cursive;
+  font-size: 3.5rem;
+  color: #000;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.message-title::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background-color: var(--contact-pink);
+  z-index: -1;
+  transform: skewX(-10deg);
+}
+
+.message-text {
+  font-family: 'Cabin', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.contact-card {
+  background: var(--contact-card);
+  padding: 30px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  color: var(--contact-text);
+  font-family: 'Cabin', sans-serif;
+  font-weight: 500;
+}
+
+.contact-item:hover {
+  background-color: var(--contact-pink);
+  transform: translateX(5px);
+  color: #000;
+}
+
+.icon-box {
+  background: #FFF0F5;
+  padding: 10px;
+  border-radius: 50%;
+  color: var(--contact-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--contact-accent);
+}
+
+.form-container {
+  background: #FFF;
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: 0 15px 40px rgba(211, 138, 163, 0.15);
+  border: 1px solid #FFF0F5;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.form-clip {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #999;
+  filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1));
+}
+
+.form-title {
+  font-family: 'Jersey 10', sans-serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-label {
+  font-family: 'Cabin', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-left: 10px;
+}
+
+.custom-input,
+.custom-textarea {
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 15px;
+  border: 1px solid var(--input-border);
+  background: #FAFAFA;
+  font-family: 'Cabin', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.custom-input:focus,
+.custom-textarea:focus {
+  border-color: var(--input-focus);
+  background: #FFF;
+  box-shadow: 0 0 0 4px rgba(243, 184, 201, 0.2);
+}
+
+.custom-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-btn {
+  background: var(--contact-accent);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-family: 'Cabin', sans-serif;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  align-self: center;
+  margin-top: 10px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 10px rgba(211, 138, 163, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.submit-btn:hover {
+  background: #C04C78;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(211, 138, 163, 0.5);
+}
+
+@media (max-width: 768px) {
+  .top-area {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .message-title {
+    font-size: 2.8rem;
+  }
+
+  .contact-section {
+    border-left: none;
+    padding: 60px 15px;
+  }
+
+  .form-container {
+    padding: 25px;
+  }
+}

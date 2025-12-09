@@ -1,0 +1,208 @@
+/* Header wrapper */
+.header-wrapper {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Container da Navbar (A pílula bege grande) */
+.navbar-container {
+  background: #EEDAC5;
+  padding: 15px 40px;
+  border-radius: 50px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Lista de links */
+.nav-menu {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* O Link individual */
+.nav-item {
+  position: relative;
+  text-decoration: none;
+  color: #4A3B3B;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 25px;
+  border-radius: 30px;
+  transition: color 0.5s;
+  display: block;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Efeito rosa */
+.nav-item::after {
+  content: "";
+  position: absolute;
+  background: #FF4081;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: -1;
+  transition: top 0.5s, opacity 0.5s;
+}
+
+.nav-item:hover {
+  color: #fff;
+}
+
+.nav-item:hover::after {
+  top: 50%;
+  opacity: 1;
+}
+
+/* Botão de idioma (Ao lado da navbar) */
+.lang-btn-side {
+  background-color: #CD5C5C;
+  color: #000000;
+  border: none;
+  
+  padding: 12px 18px;
+  border-radius: 50px;
+  
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  
+  font-family: 'Cabin', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.lang-btn-side:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  background-color: #B84C4C;
+}
+
+.lang-btn-side:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.lang-active {
+  color: #000000;
+  font-weight: 800;
+}
+
+.lang-inactive {
+  color: #FFC0CB;
+  font-weight: 400;
+}
+
+.lang-sep {
+  color: #000000;
+  font-size: 0.8rem;
+  margin: 0 2px;
+}
+
+/* ------------------------------ */
+/*   🔽 RESPONSIVIDADE AQUI 🔽    */
+/* ------------------------------ */
+
+/* Telas até 900px: navbar menor */
+@media (max-width: 900px) {
+  .header-wrapper {
+    top: 20px;
+  }
+
+  .navbar-container {
+    padding: 12px 30px;
+  }
+
+  .nav-item {
+    font-size: 16px;
+    padding: 8px 18px;
+  }
+
+  .lang-btn-side {
+    padding: 10px 15px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Telas até 600px: vira MENU HAMBURGUER */
+@media (max-width: 600px) {
+  .header-wrapper {
+    top: 15px;
+    width: calc(100% - 30px);
+    justify-content: space-between;
+  }
+
+  .navbar-container {
+    padding: 12px 20px;
+    border-radius: 40px;
+    flex: 1;
+    justify-content: flex-start;
+  }
+
+  .nav-menu {
+    display: none; /* some o menu */
+  }
+
+  /* Botão de menu hamburguer */
+  .menu-toggle {
+    width: 28px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-right: auto;
+  }
+
+  .menu-toggle span {
+    display: block;
+    height: 4px;
+    background: #FF4081;
+    border-radius: 10px;
+    transition: 0.3s ease;
+  }
+
+  /* Quando ativar o menu */
+  .nav-menu.active {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 65px;
+    left: 15px;
+    background: #EEDAC5;
+    padding: 20px 30px;
+    border-radius: 30px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  /* Botão de idioma no mobile */
+  .lang-btn-side {
+    padding: 10px 14px;
+    font-size: 0.75rem;
+    gap: 6px;
+  }
+}

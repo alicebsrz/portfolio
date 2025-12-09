@@ -1,0 +1,106 @@
+/* Container que ocupa a tela inteira */
+.hero-container {
+  width: 100%;
+  min-height: 100vh; /* Altura total da janela */
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;     /* Centraliza verticalmente */
+  background-color: #E6BEAE; /* Rosa mais clarinho e elegante */
+  padding-top: 80px; /* Um empurrãozinho para baixo por causa da Navbar fixa */
+  position: relative;
+  overflow: hidden; /* Evita barras de rolagem indesejadas */
+}
+
+/* A Imagem Gigante */
+.hero-img {
+  width: 95%;          /* Ocupa quase toda a largura disponível */
+  max-width: 1300px;   /* Limite máximo para telas muito largas (TVs/Monitores grandes) */
+  height: auto;        /* Altura automática baseada na largura */
+  max-height: 80vh;    /* Limita a altura a 80% da tela para não cortar */
+  object-fit: contain; /* Garante que a imagem inteira apareça */
+  position: relative;
+  z-index: 2;          /* Garante que as estrelas fiquem atrás */
+  
+  /* Sombra suave para destacar do fundo (opcional, mas fica lindo) */
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.2));
+  
+  /* Animação suave de entrada (Fade in + Zoom leve) */
+  animation: heroEnter 1.5s ease-out;
+}
+
+/* Estrelas decorativas */
+.hero-star {
+  position: absolute;
+  width: clamp(56px, 10vw, 120px);
+  height: auto;
+  pointer-events: none;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.12));
+  animation: starFloat 6s ease-in-out infinite;
+  z-index: 1;
+}
+
+.star-1 {
+  top: 24%;
+  left: 28%;
+  animation-delay: 0s;
+}
+
+.star-2 {
+  bottom: 18%;
+  right: 24%;
+  animation-delay: 1.2s;
+}
+
+/* Animação para a imagem aparecer suavemente */
+@keyframes heroEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes starFloat {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.03) rotate(2deg);
+  }
+  100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}
+
+/* Responsividade das estrelas */
+@media (max-width: 900px) {
+  .hero-star {
+    width: clamp(48px, 14vw, 90px);
+  }
+  .star-1 {
+    top: 22%;
+    left: 24%;
+  }
+  .star-2 {
+    bottom: 16%;
+    right: 20%;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-star {
+    width: clamp(42px, 18vw, 72px);
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
+  }
+  .star-1 {
+    top: 20%;
+    left: 22%;
+  }
+  .star-2 {
+    bottom: 14%;
+    right: 18%;
+  }
+}
