@@ -1,16 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, Linkedin, Github, MessageCircle, Paperclip, Heart } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
 import './Contact.css';
 
 const Contact = () => {
   const { texts } = useLanguage();
+  // Estado para controlar o loading do botão
+  const [isSending, setIsSending] = useState(false);
 
   if (!texts) return null;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Obrigada pela mensagem! 💌 (Em breve conectarei ao servidor de e-mail)");
+    setIsSending(true); // Ativa o "Enviando..."
+
+    // Pega os dados do formulário
+    const formData = new FormData(e.target);
+    
+    // URL do Formspree
+    const formspreeUrl = "https://formspree.io/f/xeoyreap"; 
+
+    try {
+      const response = await fetch(formspreeUrl, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        alert("Mensagem enviada com sucesso! 💌 Vou te responder em breve.");
+        e.target.reset(); // Limpa os campos
+      } else {
+        alert("Opa! Houve um erro ao enviar. Tente me chamar no LinkedIn/WhatsApp.");
+      }
+    } catch (error) {
+      alert("Erro de conexão. Verifique sua internet.");
+    } finally {
+      setIsSending(false); // Desativa o "Enviando..."
+    }
   };
 
   return (
@@ -54,18 +83,18 @@ const Contact = () => {
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="input-group">
               <label className="input-label">{texts.contact.formName}</label>
-              <input type="text" placeholder={texts.contact.formNamePlaceholder} className="custom-input" required />
+              <input type="text" name="name" placeholder={texts.contact.formNamePlaceholder} className="custom-input" required />
             </div>
             <div className="input-group">
               <label className="input-label">{texts.contact.formEmail}</label>
-              <input type="email" placeholder={texts.contact.formEmailPlaceholder} className="custom-input" required />
+              <input type="email" name="email" placeholder={texts.contact.formEmailPlaceholder} className="custom-input" required />
             </div>
             <div className="input-group">
               <label className="input-label">{texts.contact.formMessage}</label>
-              <textarea placeholder={texts.contact.formMessagePlaceholder} className="custom-textarea" required></textarea>
+              <textarea name="message" placeholder={texts.contact.formMessagePlaceholder} className="custom-textarea" required></textarea>
             </div>
-            <button type="submit" className="submit-btn">
-              {texts.contact.submitBtn} <Heart size={18} />
+            <button type="submit" className="submit-btn" disabled={isSending}>
+              {isSending ? "Enviando..." : texts.contact.submitBtn} {!isSending && <Heart size={18} />}
             </button>
           </form>
         </div>
