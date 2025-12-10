@@ -26,8 +26,8 @@ import './About.css';
 import myPhoto from '../assets/alice-photo.jpg';
 
 // Componente TitleIcon declarado FORA do About para evitar recriação a cada render
-const TitleIcon = ({ icon: Icon }) => (
-  <Icon size={32} strokeWidth={2.5} style={{ display: 'inline', marginBottom: '6px', marginRight: '10px', color: '#D38AA3' }} />
+const TitleIcon = ({ icon: IconComponent }) => (
+  <IconComponent size={32} strokeWidth={2.5} style={{ display: 'inline', marginBottom: '6px', marginRight: '10px', color: '#D38AA3' }} />
 );
 
 const About = () => {
