@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star } from 'lucide-react'; 
+import { Heart } from 'lucide-react'; 
 import { useLanguage } from '../contexts/LanguageContext';
 import './Navbar.css';
 
@@ -18,21 +18,21 @@ const Navbar = () => {
   return (
     <header className="header-wrapper">
       
-      {/* 2. Botão Hamburguer (Só aparece no mobile via CSS) */}
-      <button 
-        className="menu-toggle" 
-        onClick={toggleMenu} 
-        aria-label="Abrir menu"
-      >
-        {/* As 3 listras do ícone */}
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      {/* A Pílula Bege (Navbar) */}
+      {/* A Pílula Bege (Navbar) - Agora contém o hamburguer */}
       <nav className="navbar-container">
-        {/* 3. Adicionamos a classe 'active' se o estado isOpen for true */}
+        {/* Botão Hamburguer (Dentro da pílula) */}
+        <button 
+          className="menu-toggle" 
+          onClick={toggleMenu} 
+          aria-label="Abrir menu"
+        >
+          {/* As 3 listras do ícone */}
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        {/* 3. Menu de links com classe 'active' se o estado isOpen for true */}
         <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
           
           {/* Ao clicar num link, fechamos o menu automaticamente */}
@@ -44,7 +44,7 @@ const Navbar = () => {
 
         {/* O Botão de Idioma Lateral */}
         <button onClick={toggleLanguage} className="lang-btn-side" title="Mudar idioma">
-          <Star size={14} fill={lang === 'pt' ? "#FFF" : "none"} stroke={lang === 'pt' ? "none" : "currentColor"} /> 
+          <Heart size={14} fill={lang === 'pt' ? "#FFF" : "none"} stroke={lang === 'pt' ? "none" : "currentColor"} /> 
           <div className="lang-text">
             <span className={lang === 'pt' ? 'lang-active' : 'lang-inactive'}>PT</span>
             <span className="lang-sep">|</span>

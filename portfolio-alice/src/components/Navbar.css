@@ -10,7 +10,7 @@
   gap: 15px;
 }
 
-/* Container da Navbar (A pílula bege grande) */
+/* Container da Navbar (A pílula bege grande) - AGORA CONTÉM O HAMBURGUER */
 .navbar-container {
   background: #EEDAC5;
   padding: 15px 40px;
@@ -22,6 +22,7 @@
   width: max-content;
   border: 2px solid rgba(255, 255, 255, 0.3);
   transition: all 0.3s ease-in-out;
+  gap: 10px;
 }
 
 /* Lista de links */
@@ -160,14 +161,15 @@
     left: 50%;
     transform: translateX(-50%);
     justify-content: space-between;
+    gap: 10px;
   }
 
   .navbar-container {
     padding: 10px 15px; /* Pílula um pouco menor no mobile */
     border-radius: 40px;
-    /* Removemos flex:1 para a pílula não empurrar o hambúrguer para fora */
     width: auto; 
-    justify-content: flex-end;
+    justify-content: flex-start;
+    gap: 15px;
   }
 
   /* O MENU (Lista de links) */
@@ -198,7 +200,7 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* BOTÃO HAMBURGUER (Agora visível) */
+  /* BOTÃO HAMBURGUER (Agora DENTRO da pílula) */
   .menu-toggle {
     display: flex; /* Força aparecer */
     flex-direction: column;
@@ -210,7 +212,8 @@
     cursor: pointer;
     z-index: 1001; /* Fica acima de tudo */
     padding: 0;
-    margin-right: 15px; /* Espaço entre ele e a pílula */
+    margin: 0;
+    flex-shrink: 0;
   }
 
   .menu-toggle span {
@@ -222,10 +225,13 @@
     transition: all 0.3s ease;
   }
 
-  /* Botão de idioma no mobile */
+  /* Botão de idioma no mobile - FORA da pílula */
   .lang-btn-side {
     padding: 8px 12px;
     font-size: 0.75rem;
     gap: 4px;
+    position: absolute;
+    right: 10px;
+    top: 15px;
   }
 }
