@@ -65,7 +65,7 @@ O objetivo é apresentar meus principais projetos, minhas habilidades técnicas 
 
 ---
 
-## 🎨 **5. UI/UX **
+## 🎨 **5. UI/UX**
 - Identidade visual baseada em:
   - rosa claro + bege  
   - sombras marcadas  
