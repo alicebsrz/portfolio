@@ -26,6 +26,7 @@ import './About.css';
 import myPhoto from '../assets/alice-photo.jpg';
 
 // Componente TitleIcon declarado FORA do About para evitar recriação a cada render
+// eslint-disable-next-line no-unused-vars
 const TitleIcon = ({ icon: IconComponent }) => (
   <IconComponent size={32} strokeWidth={2.5} style={{ display: 'inline', marginBottom: '6px', marginRight: '10px', color: '#D38AA3' }} />
 );
