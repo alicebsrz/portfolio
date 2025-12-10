@@ -94,7 +94,6 @@ Ele é mais que uma vitrine:
 
 # 🚀 **Como Rodar o Projeto**
 
-```bash
 # Clonar o repositório
 git clone https://github.com/seu-usuario/seu-portfolio.git
 
