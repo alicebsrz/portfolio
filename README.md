@@ -45,11 +45,6 @@ O objetivo é apresentar meus principais projetos, minhas habilidades técnicas 
 - **Pseudo-elementos** (`::before`, `::after`)  
 - **Animações com keyframes** e micro-interações  
 - **Responsividade completa** com media queries (mobile first)  
-- Criação de:
-  - textura de papel  
-  - linhas de caderno  
-  - cards com sombra dura (soft brutalism)  
-  - destaques com marca-texto  
 
 ---
 
@@ -70,7 +65,7 @@ O objetivo é apresentar meus principais projetos, minhas habilidades técnicas 
 
 ---
 
-## 🎨 **5. UI/UX – Estética Cozy Retro**
+## 🎨 **5. UI/UX **
 - Identidade visual baseada em:
   - rosa claro + bege  
   - sombras marcadas  
@@ -93,17 +88,6 @@ O **Portfólio Interativo** demonstra:
 
 Ele é mais que uma vitrine:  
 é uma demonstração clara de como eu penso, estruturo e construo interfaces.
-
----
-
-# 📁 **Estrutura Geral (Simplificada)**
-src/
-├── assets/ # imagens, icons, vídeos
-├── components/ # Navbar, Hero, Projects, Footer, etc.
-├── context/ # i18n (Context API)
-├── data/ # dados dos projetos, skills, etc.
-├── styles/ # css global e variáveis
-└── App.jsx # estrutura principal da SPA
 
 
 ---
