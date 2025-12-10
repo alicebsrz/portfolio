@@ -48,13 +48,13 @@ const About = () => {
           <p className="slide-text">
             {lang === 'pt' ? (
               <>
-                Sou estudante de <strong>Engenharia de Computação na UERJ</strong>, apaixonada por tecnologia, inovação e criação de soluções que unem lógica, design e experiência do usuário.
+                <strong>Sou Alice Barbosa</strong>, estudante de <strong>Engenharia de Computação na UERJ</strong>, apaixonada por tecnologia, inovação e criação de soluções que unem lógica, design e experiência do usuário.
                 <br /><br />
                 Atuo no desenvolvimento <strong>Full Stack</strong>, com foco crescente em interfaces interativas e arquitetura de software. Sou movida por desafios e busco sempre construir produtos que realmente façam a diferença, aplicando minha visão técnica e artística.
               </>
             ) : (
               <>
-                I'm a <strong>Computer Engineering student at UERJ</strong>, passionate about technology, innovation, and creating solutions that unite logic, design, and user experience.
+                <strong>I'm Alice Barbosa</strong>, a <strong>Computer Engineering student at UERJ</strong>, passionate about technology, innovation, and creating solutions that unite logic, design, and user experience.
                 <br /><br />
                 I work in <strong>Full Stack</strong> development, with growing focus on interactive interfaces and software architecture. I'm driven by challenges and always seek to build products that really make a difference, applying my technical and artistic vision.
               </>
